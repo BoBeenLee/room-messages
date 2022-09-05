@@ -8,6 +8,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  min-width: 350px;
   border-right: 1px solid #dcdcdc;
 }
 
