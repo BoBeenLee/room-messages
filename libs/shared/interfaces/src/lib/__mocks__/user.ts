@@ -10,37 +10,37 @@ export const MOCK_ME: User = {
 export const MOCK_USERS: User[] = [
   {
     id: '1',
-    name: 'Test1',
+    name: '최예슬',
     profile: images.profile,
   },
   {
     id: '2',
-    name: 'Test2',
+    name: 'Shin YeJI',
     profile: images.profile,
   },
   {
     id: '3',
-    name: 'Test3',
+    name: '김펀치',
     profile: images.profile,
   },
   {
     id: '4',
-    name: 'Tset4',
+    name: '이윤호',
     profile: images.profile,
   },
   {
     id: '5',
-    name: 'Test5',
+    name: '김은지',
     profile: images.profile,
   },
   {
     id: '6',
-    name: 'Test6',
+    name: '앤드류킴',
     profile: images.profile,
   },
   {
     id: '7',
-    name: 'Test7',
+    name: '황지홍',
     profile: images.profile,
   },
 ];
