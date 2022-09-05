@@ -3,6 +3,25 @@
   flex-direction: column;
 }
 
+.user-message-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-message-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.user-profile {
+}
+
+.user-name {
+  margin-left: 0.5rem;
+}
+
 .user-message {
   display: flex;
   flex-direction: row;
@@ -13,15 +32,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 2.563rem;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.1px;
   color: var(--charcoal-grey-two);
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px 0 var(--black-10);
   background-color: #fff;
   margin-right: 0.25rem;
 }
@@ -53,12 +67,11 @@
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: -0.1px;
-  color: #fff;
+  color: #5a7aff;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   border-radius: 12px;
-  box-shadow: 0 2px 4px 0 rgba(91, 56, 177, 0.4);
-  background-color: #5a7aff;
+  background-color: #fff;
   margin-left: 0.25rem;
 }
 

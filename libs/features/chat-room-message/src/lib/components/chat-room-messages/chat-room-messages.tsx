@@ -28,8 +28,7 @@ export function ChatRoomMessages(props: ChatRoomMessagesProps) {
   return (
     <div ref={divRef} className={cn(styles['chat-room-messages'], className)}>
       {messages?.map((chatRoomMessage, index) => {
-        const { id, user, message, createdAt } =
-          chatRoomMessage;
+        const { id, user, message, createdAt } = chatRoomMessage;
 
         const isMe = user.id === me.id;
         const diffPrevDays =
@@ -61,6 +60,7 @@ export function ChatRoomMessages(props: ChatRoomMessagesProps) {
               <ChatRoomMessageItem key={id}>
                 {message ? (
                   <ChatRoomMessageItem.MyMessage
+                    user={user}
                     message={message ?? ''}
                     createdAt={createdAtIfNotSameMinutes}
                   />
@@ -70,6 +70,7 @@ export function ChatRoomMessages(props: ChatRoomMessagesProps) {
             {!isMe ? (
               <ChatRoomMessageItem key={id}>
                 <ChatRoomMessageItem.UserMessage
+                  user={user}
                   message={message ?? ''}
                   createdAt={createdAtIfNotSameMinutes}
                 />
