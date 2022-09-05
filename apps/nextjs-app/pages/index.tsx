@@ -44,14 +44,24 @@ export function List() {
         message,
         user: MOCK_ME,
       });
-      await queryClient.invalidateQueries(
-        ['chat-room-messages', room.id],
-        {
-          exact: true,
-          type: 'active',
-        },
-        { throwOnError: false, cancelRefetch: true }
-      );
+      await Promise.all([
+        queryClient.invalidateQueries(
+          ['chat-room-messages', room.id],
+          {
+            exact: true,
+            type: 'active',
+          },
+          { throwOnError: false, cancelRefetch: true }
+        ),
+        queryClient.invalidateQueries(
+          ['chat-rooms'],
+          {
+            exact: true,
+            type: 'active',
+          },
+          { throwOnError: false, cancelRefetch: true }
+        ),
+      ]);
     },
     [mutation, room]
   );
@@ -66,7 +76,10 @@ export function List() {
         <div className={styles['chat-rooms']}>
           <ChatRoomAppBar />
           <Suspense fallback={<Loading className={styles['loading']} />}>
-            <ChatRoomsContainer selectedRoomId={room.id} onNavigateTo={onNavigateTo} />
+            <ChatRoomsContainer
+              selectedRoomId={room.id}
+              onNavigateTo={onNavigateTo}
+            />
           </Suspense>
         </div>
         <div className={styles['chat-room-messages']}>
