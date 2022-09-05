@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { getRooms } from '../../apis/room';
+import { ChatRoom } from "../../interfaces";
 import ChatRooms from './chat-rooms';
 export interface ChatRoomsProps {
   className?: string;
-  onNavigateTo: (roomId: string) => void;
+  onNavigateTo: (room: ChatRoom) => void;
 }
 
 export function ChatRoomsContainer(props: ChatRoomsProps) {

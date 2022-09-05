@@ -4,6 +4,13 @@
   flex-direction: row;
 }
 
+.chat-rooms {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-right: 1px solid #dcdcdc;
+}
+
 .chat-room-messages {
   position: relative;
   display: flex;

@@ -1,10 +1,11 @@
 import {
+  ChatRoom,
   ChatRoomAppBar,
   ChatRoomsContainer,
+  MOCK_CHAT_ROOMS,
 } from '@room-messages/features-chat-room';
 import Layout from '../components/layout/layout';
 import styles from '../styles/index.module.css';
-import { useRouter } from 'next/router';
 import { Suspense, useCallback, useState } from 'react';
 import { Loading } from '@room-messages/shared-ui-components';
 
@@ -12,6 +13,7 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { getRooms } from '@room-messages/features-chat-room';
 import { GetServerSideProps } from 'next';
 import {
+  ChatRoomMessageAppBar,
   ChatRoomMessageInputForm,
   ChatRoomMessagesContainer,
   useSendRoomMessageMutation,
@@ -32,19 +34,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 };
 
 export function List() {
-  const router = useRouter();
   const mutation = useSendRoomMessageMutation();
-  const [roomId, setRoomId] = useState("1");
+  const [room, setRoom] = useState<ChatRoom>(MOCK_CHAT_ROOMS[0]);
 
   const onInputSubmit = useCallback(
     async (message: string) => {
       await mutation.mutateAsync({
-        roomId,
+        roomId: room.id,
         message,
         user: MOCK_ME,
       });
       await queryClient.invalidateQueries(
-        ['chat-room-messages', roomId],
+        ['chat-room-messages', room.id],
         {
           exact: true,
           type: 'active',
@@ -52,34 +53,32 @@ export function List() {
         { throwOnError: false, cancelRefetch: true }
       );
     },
-    [mutation, roomId]
+    [mutation, room]
   );
 
-  const onNavigateTo = useCallback(
-    (roomId: string) => {
-      setRoomId(roomId);
-    },
-    []
-  );
+  const onNavigateTo = useCallback((room: ChatRoom) => {
+    setRoom(room);
+  }, []);
 
   return (
     <Layout>
-      <header>
-        <ChatRoomAppBar />
-      </header>
       <main className={styles['content']}>
-        <Suspense fallback={<Loading className={styles['loading']} />}>
-          <ChatRoomsContainer onNavigateTo={onNavigateTo} />
-        </Suspense>
-        <Suspense fallback={<Loading className={styles['loading']} />}>
-          <div className={styles["chat-room-messages"]}>
-            <ChatRoomMessagesContainer me={MOCK_ME} roomId={roomId} />
+        <div className={styles['chat-rooms']}>
+          <ChatRoomAppBar />
+          <Suspense fallback={<Loading className={styles['loading']} />}>
+            <ChatRoomsContainer onNavigateTo={onNavigateTo} />
+          </Suspense>
+        </div>
+        <div className={styles['chat-room-messages']}>
+          <ChatRoomMessageAppBar name={room.user.name} />
+          <Suspense fallback={<Loading className={styles['loading']} />}>
+            <ChatRoomMessagesContainer me={MOCK_ME} roomId={room.id} />
             <ChatRoomMessageInputForm
               className={styles['chat-room-message-input']}
               onSubmit={onInputSubmit}
             />
-          </div>
-        </Suspense>
+          </Suspense>
+        </div>
       </main>
     </Layout>
   );
