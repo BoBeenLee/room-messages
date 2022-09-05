@@ -9,5 +9,4 @@ export * from './lib/badge/badge';
 export * from './lib/date-text/date-text';
 export * from './lib/app-bar/app-bar';
 export * from './lib/loading/loading';
-export * from './lib/progress-bar/progress-bar';
 export * from './lib/image/image';
