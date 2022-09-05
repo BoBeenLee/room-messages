@@ -88,3 +88,8 @@ npm run ui-components:storybook
 ### Commit Convention
 
 - This starter is using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), it is mandatory to use it to commit changes.
+
+## Deployment
+
+- Vercel: https://room-messages.vercel.app/
+- Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
