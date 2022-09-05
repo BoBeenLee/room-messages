@@ -14,7 +14,7 @@ export function ChatRoomAppBar(props: ChatRoomAppBarProps) {
         <Icon className={styles['menu-icon']} name="menu" />
       </AppBar.Left>
       <AppBar.Content>
-        <PageTitle>채팅</PageTitle>
+        <PageTitle>채팅방</PageTitle>
       </AppBar.Content>
       <AppBar.Right>
         <Icon className={styles['person-icon']} name="person" />
