@@ -18,6 +18,14 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  height: 100vh;
+}
+
+.chat-room-message-input {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .loading {
