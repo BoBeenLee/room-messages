@@ -17,7 +17,7 @@ const Template: Story<ChatRoomMessageAppBarProps> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  name: '사장님',
+  name: '최예슬',
   onImagePicker: action('onImagePicker'),
   onBack: action('onBack'),
 };

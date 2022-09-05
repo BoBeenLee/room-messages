@@ -11,5 +11,5 @@ const Template: Story<PageTitleProps> = (args) => <PageTitle {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: "사장님"
+  children: "최예슬"
 };
