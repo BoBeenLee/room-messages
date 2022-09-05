@@ -1,0 +1,7 @@
+.text-input {
+  padding: 1.063rem 1.063rem 1rem 1rem;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: 0 2px 4px 0 var(--black-10);
+  background-color: #fff;
+}

@@ -1,0 +1,45 @@
+.chat-room-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4.625rem;
+}
+
+.profile {
+  margin-right: 0.938em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.room {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.room-name {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: var(--charcoal-grey);
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.message-text {
+  display: flex;
+  flex: 1;
+  font-size: 0.813rem;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  color: var(--cool-grey);
+}

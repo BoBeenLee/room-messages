@@ -1,0 +1,27 @@
+.chat-room-message-app-bar {
+}
+
+.icon-button {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+
+.back-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.image-button {
+  margin-right: 1.062rem;
+}
+.image-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 4px;
+}
+
+.search-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

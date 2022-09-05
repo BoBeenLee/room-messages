@@ -1,0 +1,13 @@
+import { images } from '@room-messages/shared/interfaces';
+import { render } from '@testing-library/react';
+
+import Image from './image';
+
+describe('Image', () => {
+  it('should render successfully', () => {
+    const { baseElement } = render(
+      <Image width={200} height={200} src={images.profile} />
+    );
+    expect(baseElement).toBeTruthy();
+  });
+});

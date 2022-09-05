@@ -1,0 +1,10 @@
+.chat-rooms {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.625rem;
+  background-color: #fff;
+  height: calc(100vh - 2.75rem);
+  overflow: auto;
+}

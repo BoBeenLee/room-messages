@@ -1,0 +1,16 @@
+.chat-room-messages {
+  position: fixed;
+  top: 2.75rem;
+  bottom: 0;
+  width: 100%;
+  max-width: 640px;
+  padding-top: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 5.625rem;
+  overflow: auto;
+}
+
+.chat-room-messages > * + * {
+  margin-top: 0.625rem;
+}
