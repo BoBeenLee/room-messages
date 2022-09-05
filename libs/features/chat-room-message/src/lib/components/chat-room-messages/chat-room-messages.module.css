@@ -1,9 +1,8 @@
 .chat-room-messages {
-  position: fixed;
-  top: 2.75rem;
-  bottom: 0;
-  width: 100%;
-  max-width: 640px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: calc(100vh - 2.75rem);
   padding-top: 1.25rem;
   padding-left: 1rem;
   padding-right: 1rem;

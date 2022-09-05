@@ -72,11 +72,13 @@ export function List() {
           <ChatRoomsContainer onNavigateTo={onNavigateTo} />
         </Suspense>
         <Suspense fallback={<Loading className={styles['loading']} />}>
-          <ChatRoomMessagesContainer me={MOCK_ME} roomId={roomId} />
-          <ChatRoomMessageInputForm
-            className={styles['chat-room-message-input']}
-            onSubmit={onInputSubmit}
-          />
+          <div className={styles["chat-room-messages"]}>
+            <ChatRoomMessagesContainer me={MOCK_ME} roomId={roomId} />
+            <ChatRoomMessageInputForm
+              className={styles['chat-room-message-input']}
+              onSubmit={onInputSubmit}
+            />
+          </div>
         </Suspense>
       </main>
     </Layout>
