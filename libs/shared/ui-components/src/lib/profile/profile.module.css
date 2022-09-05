@@ -1,7 +1,7 @@
 .profile {
   position: relative;
-  width: 3.5rem;
-  height: 3.5rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
   border-radius: 50%;
   overflow: hidden;
 }

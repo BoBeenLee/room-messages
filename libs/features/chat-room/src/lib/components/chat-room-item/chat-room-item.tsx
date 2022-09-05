@@ -53,7 +53,9 @@ function Message(props: MessageProps) {
   return (
     <div className={styles['message']}>
       <div className={styles['message-text']}>{message}</div>
-      {badgeCount > 0 ? <Badge>{badgeCount}</Badge> : null}
+      {badgeCount > 0 ? (
+        <Badge className={styles['message-badge']}>{badgeCount}</Badge>
+      ) : null}
     </div>
   );
 }
