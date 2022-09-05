@@ -5,7 +5,7 @@ import {
 import Layout from '../components/layout/layout';
 import styles from '../styles/index.module.css';
 import { useRouter } from 'next/router';
-import { Suspense, useCallback } from 'react';
+import { Suspense, useCallback, useState } from 'react';
 import { Loading } from '@room-messages/shared-ui-components';
 
 import { dehydrate, QueryClient } from '@tanstack/react-query';
@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 export function List() {
   const router = useRouter();
   const mutation = useSendRoomMessageMutation();
-  const roomId = '1';
+  const [roomId, setRoomId] = useState("1");
 
   const onInputSubmit = useCallback(
     async (message: string) => {
@@ -57,9 +57,9 @@ export function List() {
 
   const onNavigateTo = useCallback(
     (roomId: string) => {
-      router.push(`/room/${roomId}`);
+      setRoomId(roomId);
     },
-    [router]
+    []
   );
 
   return (
