@@ -8,3 +8,12 @@
   height: calc(100vh - 5.75rem);
   overflow: auto;
 }
+
+.chat-room {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.selected-chat-room {
+  background-color: #dcdcdc;
+}

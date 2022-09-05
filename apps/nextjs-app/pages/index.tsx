@@ -66,7 +66,7 @@ export function List() {
         <div className={styles['chat-rooms']}>
           <ChatRoomAppBar />
           <Suspense fallback={<Loading className={styles['loading']} />}>
-            <ChatRoomsContainer onNavigateTo={onNavigateTo} />
+            <ChatRoomsContainer selectedRoomId={room.id} onNavigateTo={onNavigateTo} />
           </Suspense>
         </div>
         <div className={styles['chat-room-messages']}>

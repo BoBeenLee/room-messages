@@ -6,9 +6,10 @@ import {
 } from '@room-messages/shared-ui-components';
 import styles from './chat-room-item.module.css';
 import cn from 'classnames';
-import { getChatRoomDateTime } from "../../utils/datetime";
+import { getChatRoomDateTime } from '../../utils/datetime';
 
 export interface ChatRoomItemProps {
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -22,8 +23,10 @@ interface MessageProps {
 }
 
 export function ChatRoomItem(props: ChatRoomItemProps) {
-  const { children } = props;
-  return <div className={styles['chat-room-item']}>{children}</div>;
+  const { className, children } = props;
+  return (
+    <div className={cn(styles['chat-room-item'], className)}>{children}</div>
+  );
 }
 
 function Content({ children }: { children: React.ReactNode }) {

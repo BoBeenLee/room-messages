@@ -4,6 +4,7 @@ import { ChatRoom } from "../../interfaces";
 import ChatRooms from './chat-rooms';
 export interface ChatRoomsProps {
   className?: string;
+  selectedRoomId?: string;
   onNavigateTo: (room: ChatRoom) => void;
 }
 

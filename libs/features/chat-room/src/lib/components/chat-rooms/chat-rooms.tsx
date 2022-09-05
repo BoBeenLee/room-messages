@@ -6,12 +6,13 @@ import { useCallback } from 'react';
 import { ChatRoom } from '../../interfaces';
 export interface ChatRoomsProps {
   className?: string;
+  selectedRoomId?: string;
   rooms: ChatRoom[];
   onNavigateTo: (room: ChatRoom) => void;
 }
 
 export function ChatRooms(props: ChatRoomsProps) {
-  const { className, rooms = [], onNavigateTo } = props;
+  const { className, selectedRoomId, rooms = [], onNavigateTo } = props;
 
   const onRoomNavigateTo = useCallback(
     (room: ChatRoom) => {
@@ -25,10 +26,17 @@ export function ChatRooms(props: ChatRoomsProps) {
   return (
     <div className={cn(styles['chat-rooms'], className)}>
       {rooms?.map((room) => {
-        const { user, lastestMessage, unreadCount } = room;
+        const { id, user, lastestMessage, unreadCount } = room;
         return (
           <Button key={room.id} onClick={onRoomNavigateTo(room)}>
-            <ChatRoomItem>
+            <ChatRoomItem
+              className={cn([
+                styles['chat-room'],
+                {
+                  [styles['selected-chat-room']]: selectedRoomId === id,
+                },
+              ])}
+            >
               <ChatRoomItem.Profile source={user.profile} />
               <ChatRoomItem.Content>
                 <ChatRoomItem.Room

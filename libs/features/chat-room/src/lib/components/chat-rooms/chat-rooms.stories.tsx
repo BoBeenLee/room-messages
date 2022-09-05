@@ -14,5 +14,6 @@ const Template: Story<ChatRoomsProps> = (args) => <ChatRooms {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   rooms: MOCK_CHAT_ROOMS,
+  selectedRoomId: MOCK_CHAT_ROOMS[0].id,
   onNavigateTo: action('onNavigateTo'),
 };
