@@ -14,8 +14,8 @@ export function ChatRoomMessageAppBar(props: ChatRoomMessageAppBarProps) {
   const { className, name } = props;
 
   return (
-    <AppBar className={cn(styles['chat-room-app-bar'], className)}>
-      <AppBar.Left>
+    <AppBar className={cn(styles['chat-room-message-app-bar'], className)}>
+      <AppBar.Left className={styles['app-bar-left']}>
         <PageTitle>{name}</PageTitle>
       </AppBar.Left>
       <AppBar.Content>

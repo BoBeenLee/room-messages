@@ -1,2 +1,6 @@
 .chat-room-message-app-bar {
 }
+
+.app-bar-left {
+  padding-left: 1rem;
+}

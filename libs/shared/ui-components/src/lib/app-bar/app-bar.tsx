@@ -15,8 +15,16 @@ function AppbarContent({ children }: { children: React.ReactNode }) {
   return <div className={styles['app-bar-content']}>{children}</div>;
 }
 
-function AppBarLeft({ children }: { children: React.ReactNode }) {
-  return <div className={styles['app-bar-left']}>{children}</div>;
+function AppBarLeft({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className={cn(styles['app-bar-left'], className)}>{children}</div>
+  );
 }
 
 function AppBarRight({ children }: { children: React.ReactNode }) {
