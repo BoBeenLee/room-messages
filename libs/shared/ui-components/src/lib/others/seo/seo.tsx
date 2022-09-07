@@ -1,8 +1,8 @@
 const defaultMeta = {
-  title: 'room-messages title',
+  title: 'room-messages',
   siteName: 'room-messages sitename',
   description: 'room-messages description',
-  url: 'http://example.com/',
+  url: 'https://room-messages.vercel.app/',
   type: 'website',
   robots: 'follow, index',
   /**

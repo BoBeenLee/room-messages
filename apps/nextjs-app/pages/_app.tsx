@@ -19,7 +19,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to room-messages!</title>
+        <title>1:1 채팅서비스</title>
       </Head>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={dehydratedState}>
