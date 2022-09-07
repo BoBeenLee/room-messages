@@ -1,7 +1,11 @@
 <div align="center">
-<h1>room-messages</h1>
+<h1>1:1 채팅서비스</h1>
 
 </div>
+
+### Vercel: https://room-messages.vercel.app/
+
+### Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
 
 ## ✨ Features
 
@@ -92,4 +96,6 @@ npm run ui-components:storybook
 ## Deployment
 
 - Vercel: https://room-messages.vercel.app/
+  - Vercel Dashboard main브랜치 기준 자동 배포
 - Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
+  - Surge 서비스를 이용하여 static 스토리북 페이지 수동 배포
