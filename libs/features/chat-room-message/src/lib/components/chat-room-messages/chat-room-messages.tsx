@@ -54,10 +54,10 @@ export function ChatRoomMessages(props: ChatRoomMessagesProps) {
             </ChatRoomMessageItem>
           ) : null;
         return (
-          <React.Fragment key={`${id}${index}`}>
+          <React.Fragment key={`${id}`}>
             {SeperatorComponent}
             {isMe ? (
-              <ChatRoomMessageItem key={id}>
+              <ChatRoomMessageItem>
                 {message ? (
                   <ChatRoomMessageItem.MyMessage
                     user={user}
@@ -68,7 +68,7 @@ export function ChatRoomMessages(props: ChatRoomMessagesProps) {
               </ChatRoomMessageItem>
             ) : null}
             {!isMe ? (
-              <ChatRoomMessageItem key={id}>
+              <ChatRoomMessageItem>
                 <ChatRoomMessageItem.UserMessage
                   user={user}
                   message={message ?? ''}

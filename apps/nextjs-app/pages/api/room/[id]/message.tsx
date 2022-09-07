@@ -1,7 +1,7 @@
 import { chatRooms, chatRoomMessages } from '../../../../libs/db';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { ChatRoomMessage } from '@room-messages/features-chat-room-message';
-import { todayTime } from '@room-messages/shared-utils';
+import { generateUUID, todayTime } from '@room-messages/shared-utils';
 
 const getRoomMessages = (roomId: string) => {
   const roomItem = chatRooms?.find((room) => room.id === roomId);
@@ -16,7 +16,7 @@ const postRoomMessages = (
   message: Omit<ChatRoomMessage, 'id' | 'createdAt'>
 ) => {
   const newMessage = {
-    id: `${chatRoomMessages[roomId].length + 1}`,
+    id: `${generateUUID()}`,
     user: message.user,
     message: message.message,
     createdAt: todayTime(),

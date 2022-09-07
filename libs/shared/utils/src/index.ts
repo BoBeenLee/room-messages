@@ -6,3 +6,4 @@ export * from './lib/uri/uri';
 export * from './lib/datetime/datetime';
 export * from './lib/datetime/datetime-format';
 export * from './lib/navigator';
+export * from './lib/uuid';
