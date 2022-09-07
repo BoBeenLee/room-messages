@@ -72,6 +72,7 @@
   padding-right: 0.75rem;
   border-radius: 12px;
   background-color: #fff;
+  box-shadow: 0 2px 4px 0 var(--black-10);
   margin-left: 0.25rem;
 }
 
