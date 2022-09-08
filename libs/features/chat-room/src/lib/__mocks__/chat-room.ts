@@ -31,18 +31,18 @@ export const MOCK_CHAT_ROOMS: ChatRoom[] = [
     id: '5',
     user: MOCK_USERS[4],
     lastestMessage: MOCK_CHAT_ROOM_MESSAGES_BY_ROOM_ID['5'][0],
-    unreadCount: 0,
+    unreadCount: 1,
   },
   {
     id: '6',
     user: MOCK_USERS[5],
     lastestMessage: MOCK_CHAT_ROOM_MESSAGES_BY_ROOM_ID['6'][0],
-    unreadCount: 0,
+    unreadCount: 1,
   },
   {
     id: '7',
     user: MOCK_USERS[6],
     lastestMessage: MOCK_CHAT_ROOM_MESSAGES_BY_ROOM_ID['7'][0],
-    unreadCount: 0,
+    unreadCount: 1,
   },
 ];
