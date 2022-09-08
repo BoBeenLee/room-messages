@@ -58,7 +58,7 @@
       "options": {
         "commands": [
           "nx run nextjs-app:build-production",
-          "docker build -f ./apps/nextjs-app/Dockerfile . -t nextjs-app"
+          "docker build -f ./apps/nextjs-app/Dockerfile . -t room-messages"
         ],
         "parallel": false
       },
