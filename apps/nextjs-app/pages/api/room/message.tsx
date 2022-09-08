@@ -1,4 +1,4 @@
-import { chatRooms, chatRoomMessages } from '../../../../libs/db';
+import { chatRooms, chatRoomMessages } from '../../../libs/db';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { ChatRoomMessage } from '@room-messages/features-chat-room-message';
 import { generateUUID, todayTime } from '@room-messages/shared-utils';
