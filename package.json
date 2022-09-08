@@ -22,6 +22,7 @@
     "nextjs-app:start": "nx run nextjs-app:serve",
     "nextjs-app:release": "nx run nextjs-app:release",
     "nextjs-app:build": "env-cmd -f ./apps/nextjs-app/.development.env nx run nextjs-app:build-production",
+    "nextjs-app:deploy:production": "env-cmd -f ./apps/nextjs-app/.development.env nx run nextjs-app:deploy:production",
     "ui-components:new": "plop ui-components",
     "ui-components:storybook": "nx run shared-ui-components:storybook",
     "build-storybook": "nx run-many --target=build-storybook --projects=shared-ui-components"
