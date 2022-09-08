@@ -13,13 +13,13 @@ const getRoomMessages = (roomId: string) => {
 
 const postRoomMessages = (
   roomId: string,
-  message: Omit<ChatRoomMessage, 'id' | 'createdAt'>
+  message: Omit<ChatRoomMessage, 'id'>
 ) => {
   const newMessage = {
     id: `${generateUUID()}`,
     user: message.user,
     message: message.message,
-    createdAt: todayTime(),
+    createdAt: message.createdAt ?? todayTime(),
   };
   chatRoomMessages[roomId].push(newMessage);
   const roomItem = chatRooms?.find((room) => room.id === roomId);
@@ -40,7 +40,7 @@ export const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
     return;
   }
-  const message = req.body as Omit<ChatRoomMessage, 'id' | 'createdAt'>;
+  const message = req.body as Omit<ChatRoomMessage, 'id'>;
   res.json({
     message: postRoomMessages(roomId, message),
   });

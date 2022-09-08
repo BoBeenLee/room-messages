@@ -3,7 +3,7 @@ import { AxiosError } from 'axios';
 import { sendRoomMessage } from '../apis';
 import { ChatRoomMessage } from '../interfaces';
 
-type SendRoomMessageParams = Omit<ChatRoomMessage, 'id' | 'createdAt'> & {
+type SendRoomMessageParams = Omit<ChatRoomMessage, 'id'> & {
   roomId: string;
 };
 

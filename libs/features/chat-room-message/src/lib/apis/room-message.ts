@@ -9,7 +9,7 @@ export const getRoomMessages = async (roomId: string) => {
 };
 
 export const sendRoomMessage = async (
-  request: Omit<ChatRoomMessage, 'id' | 'createdAt'> & { roomId: string }
+  request: Omit<ChatRoomMessage, 'id'> & { roomId: string }
 ) => {
   const { roomId, ...rest } = request;
   const response = await axios.post(`/api/room/${roomId}/message`, rest);

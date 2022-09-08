@@ -20,6 +20,7 @@ import {
 } from '@room-messages/features-chat-room-message';
 import { MOCK_ME } from '@room-messages/shared/interfaces';
 import { queryClient } from '@room-messages/shared-apis';
+import { todayTime } from '@room-messages/shared-utils';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ export function List() {
         roomId: room.id,
         message,
         user: MOCK_ME,
+        createdAt: todayTime(),
       });
       await Promise.all([
         queryClient.invalidateQueries(
