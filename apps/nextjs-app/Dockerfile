@@ -4,9 +4,11 @@ WORKDIR /app
 COPY ./dist/apps/nextjs-app .
 
 ENV PORT 3000
+ENV NEXT_DIR .
+ENV NODE_ENV production
 
 RUN npm install --force
 
 EXPOSE 3000
 
-CMD ["node_modules/.bin/next", "start"]
+CMD ["node", "main.js"]
