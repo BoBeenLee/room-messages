@@ -15,12 +15,23 @@
         "production": {}
       }
     },
-    "serve": {
+    "build-production": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run nextjs-app:build:production",
+          "tsc --project ./apps/nextjs-app/tsconfig.server.json"
+        ],
+        "parallel": false
+      }
+    },
+    "serve-local": {
       "executor": "@nrwl/next:server",
       "options": {
         "buildTarget": "nextjs-app:build",
         "dev": true,
-        "port": 4200
+        "customServerPath": "server.ts",
+        "port": 3000
       },
       "configurations": {
         "production": {
@@ -29,10 +40,26 @@
         }
       }
     },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx run nextjs-app:build-production",
+          "NODE_ENV=production node dist/apps/nextjs-app/main.js"
+        ],
+        "parallel": false
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
     "deploy": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["nx run nextjs-app:build:production"],
+        "commands": [
+          "nx run nextjs-app:build-production",
+          "docker build -f ./apps/nextjs-app/Dockerfile . -t nextjs-app"
+        ],
         "parallel": false
       },
       "configurations": {
