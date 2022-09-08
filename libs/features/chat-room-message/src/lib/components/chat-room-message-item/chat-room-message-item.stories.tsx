@@ -1,4 +1,5 @@
 import { todayTime } from '@room-messages/shared-utils';
+import { MOCK_ME } from '@room-messages/shared/interfaces';
 import { Story, Meta } from '@storybook/react';
 import {
   ChatRoomMessageItem,
@@ -15,6 +16,7 @@ const Template: Story<ChatRoomMessageItemProps> = (args) => (
   <div>
     <ChatRoomMessageItem>
       <ChatRoomMessageItem.UserMessage
+        user={MOCK_ME}
         message="testtest"
         createdAt={todayTime()}
       />
@@ -24,6 +26,7 @@ const Template: Story<ChatRoomMessageItemProps> = (args) => (
     </ChatRoomMessageItem>
     <ChatRoomMessageItem>
       <ChatRoomMessageItem.MyMessage
+        user={MOCK_ME}
         message="testtest"
         createdAt={todayTime()}
       />
