@@ -5,7 +5,7 @@ COPY ./dist/apps/nextjs-app .
 
 ENV PORT 3000
 
-RUN npm install --production
+RUN npm install --force
 
 EXPOSE 3000
 
