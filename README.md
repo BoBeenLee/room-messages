@@ -3,7 +3,7 @@
 
 </div>
 
-### Vercel: https://room-messages.vercel.app/
+### Heroku: https://room-messages.herokuapp.com/
 
 ### Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
 
@@ -95,7 +95,21 @@ npm run ui-components:storybook
 
 ## Deployment
 
-- Vercel: https://room-messages.vercel.app/
-  - Vercel Dashboard main브랜치 기준 자동 배포
+- Heroku: https://room-messages.herokuapp.com/
+  - Heroku main브랜치 기준 수동 배포
 - Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
   - Surge 서비스를 이용하여 static 스토리북 페이지 수동 배포
+
+### Heroku Deployment
+
+```
+heroku container:login
+
+npm run nextjs-app:deploy:production
+
+docker tag DOCKER_IMAGE_ID registry.heroku.com/room-messages/web
+
+docker push registry.heroku.com/room-messages/web
+
+heroku container:release web --app=room-messages
+```
