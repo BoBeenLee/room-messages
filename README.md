@@ -3,9 +3,9 @@
 
 </div>
 
-### Heroku: https://room-messages.herokuapp.com/
+- Heroku: https://room-messages.herokuapp.com/
 
-### Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
+- Storybook: https://bobeenlee-room-messages.surge.sh/?path=/story/chatroommessageappbar--primary
 
 ## ✨ Features
 
