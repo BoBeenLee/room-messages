@@ -1,4 +1,4 @@
-import { IconButton, TextInput } from '@room-messages/shared-ui-components';
+import { Button, TextInput } from '@room-messages/shared-ui-components';
 import styles from './chat-room-message-input-form.module.css';
 import cn from 'classnames';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -47,16 +47,14 @@ export function ChatRoomMessageInputForm(props: ChatRoomMessageInputFormProps) {
       onSubmit={handleSubmit(onFormSubmit)}
     >
       <TextInput
-        type={"text"}
+        type={'text'}
         className={styles['chat-room-message-input']}
         placeholder="메시지를 입력하세요.."
         {...register('message', { required: true })}
       />
-      <IconButton
-        className={styles['send-button']}
-        name="send"
-        onClick={onSendMessage}
-      />
+      <Button className={styles['send-button']} onClick={onSendMessage}>
+        전송
+      </Button>
     </form>
   );
 }
